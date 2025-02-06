@@ -28,7 +28,7 @@
 | 네트워크 도구         | RustScan         | 빠른 포트 스캐너.                 |
 | 네트워크 도구         | Wireshark        | 패킷 분석 도구.                   |
 | 익스플로잇(PWN)      | GDB              | 디버깅 도구.                      |
-| 익스플로잇(PWN)     | pwndbg           | Gdb 확장 플러그인.                |
+| 익스플로잇(PWN)     | [pwndbg](./WINDOW/PWN/Extensions/Pwndbg_README.md)           | Gdb 확장 플러그인.                |
 | 익스플로잇(PWN)     | gef           | Gdb 확장 플러그인.                |
 | 익스플로잇(PWN)     | windbg           | 윈도우 전용 디버거.                |
 | 웹 테스트 도구      | Burp Suite       | 웹 애플리케이션 테스트 도구.      |
