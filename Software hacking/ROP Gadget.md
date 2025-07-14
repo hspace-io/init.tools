@@ -3,6 +3,10 @@ tags:
   - linux
   - mac
   - windows
+  - pwnable
+  - reverse_engineering
+  - gadget_finder
+  - exploit_analysis
 ---
 ## 설명
 ---

@@ -1,6 +1,9 @@
 ---
 tags:
   - linux
+  - debugging
+  - pwnable
+  - cli_tool
 ---
 ## 설명
 ---

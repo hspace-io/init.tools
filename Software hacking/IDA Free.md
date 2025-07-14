@@ -3,6 +3,10 @@ tags:
   - mac
   - linux
   - windows
+  - reverse_engineering
+  - pwnable
+  - debugging
+  - multi_platform
 ---
 ## 설명
 ---

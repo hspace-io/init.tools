@@ -3,6 +3,10 @@ tags:
   - mac
   - windows
   - linux
+  - web3
+  - smart_contract
+  - dev_tool
+  - testing
 ---
 ## 설명
 ---

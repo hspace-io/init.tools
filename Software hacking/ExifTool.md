@@ -3,6 +3,9 @@ tags:
   - mac
   - windows
   - linux
+  - forensic
+  - metadata
+  - cli_tool
 ---
 ## 설명
 ---

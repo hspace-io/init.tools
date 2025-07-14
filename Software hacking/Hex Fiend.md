@@ -1,6 +1,8 @@
 ---
 tags:
   - mac
+  - hex_editor
+  - debugging
 ---
 ## 설명
 ---

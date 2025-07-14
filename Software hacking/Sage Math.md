@@ -3,6 +3,9 @@ tags:
   - windows
   - mac
   - linux
+  - math
+  - crypto
+  - science_tool
 ---
 ## 설명
 ---

@@ -3,6 +3,11 @@ tags:
   - mac
   - windows
   - linux
+  - debugging
+  - pwnable
+  - hooking
+  - mobile
+  - application
 ---
 ## 설명
 ---

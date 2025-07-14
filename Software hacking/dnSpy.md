@@ -1,6 +1,10 @@
 ---
 tags:
   - windows
+  - reverse_engineering
+  - debugging
+  - pwnable
+  - dotnet
 ---
 ## 설명
 ---

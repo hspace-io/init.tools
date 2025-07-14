@@ -3,6 +3,11 @@ tags:
   - linux
   - windows
   - mac
+  - webapp
+  - api_testing
+  - automation
+  - application
+  - multi_platform
 ---
 ## 설명
 ---

@@ -3,6 +3,10 @@ tags:
   - mac
   - windows
   - linux
+  - android
+  - emulation
+  - application
+  - dev_tool
 ---
 ## 설명
 ---

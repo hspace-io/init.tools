@@ -1,3 +1,13 @@
+---
+tags:
+  - android
+  - debugging
+  - network
+  - dev_tool
+  - pwnable
+  - mac
+  - windows
+---
 ## 설명
 ---
 `ADB (Android Debug Bridge)`는 Google에서 제공하는 다목적 명령줄 도구로, 개발자가 Android 기기와 통신하고 디버깅 할 수 있도록 지원합니다. 앱 설치, 디버깅, 파일 전송, 시스템 로그 확인, 쉘 명령어 실행 등 다양한 기기 작업을 수행할 수 있으며, 클라이언트-서버 구조로 동잡합니다. 개발자뿐만 아니라 고급 사용자들이 Android 기기를 더 세밀하게 제어하고 관리하는데 필수적인 도구입니다.

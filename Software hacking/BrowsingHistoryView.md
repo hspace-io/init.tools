@@ -1,6 +1,8 @@
 ---
 tags:
   - windows
+  - forensic
+  - application
 ---
 ## 설명
 ---

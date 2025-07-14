@@ -3,6 +3,11 @@ tags:
   - windows
   - mac
   - linux
+  - pwnable
+  - python
+  - library
+  - exploit_framework
+  - multi_platform
 ---
 ## 설명
 ---

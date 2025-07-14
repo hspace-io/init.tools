@@ -1,5 +1,10 @@
 ---
-tags: []
+tags:
+  - web3
+  - smart_contract
+  - testing
+  - dev_tool
+  - javascript
 ---
 ## 설명
 ---
