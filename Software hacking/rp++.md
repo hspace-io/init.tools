@@ -3,6 +3,9 @@ tags:
   - windows
   - mac
   - linux
+  - pwnable
+  - reverse_engineering
+  - gadget_finder
 ---
 ## 설명
 ---

@@ -1,6 +1,8 @@
 ---
 tags:
   - web_base_tool
+  - network
+  - cyber_intel
 ---
 ## 설명
 ---

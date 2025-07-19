@@ -2,6 +2,9 @@
 tags:
   - mac
   - windows
+  - forensic
+  - debugging
+  - reverse_engineering
 ---
 ## 설명
 ---

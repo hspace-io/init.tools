@@ -3,6 +3,10 @@ tags:
   - windows
   - mac
   - linux
+  - smt_solver
+  - math
+  - symbolic_execution
+  - multi_platform
 ---
 ## 설명
 ---

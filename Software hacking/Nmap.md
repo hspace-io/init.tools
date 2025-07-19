@@ -3,6 +3,11 @@ tags:
   - windows
   - mac
   - linux
+  - network
+  - scanning
+  - port_scanner
+  - multi_platform
+  - cli_tool
 ---
 ## 설명
 ---

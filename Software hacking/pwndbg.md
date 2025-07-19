@@ -1,6 +1,10 @@
 ---
 tags:
   - linux
+  - debugging
+  - pwnable
+  - exploit_analysis
+  - cli_tool
 ---
 ## 설명
 ---

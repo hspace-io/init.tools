@@ -3,6 +3,10 @@ tags:
   - windows
   - mac
   - linux
+  - virtualization
+  - emulation
+  - pwnable
+  - multi_platform
 ---
 ## 설명
 ---

@@ -3,6 +3,10 @@ tags:
   - windows
   - mac
   - linux
+  - reverse_engineering
+  - binary_analysis
+  - debugging
+  - pwnable
 ---
 ## 설명
 ---

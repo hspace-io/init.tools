@@ -2,6 +2,10 @@
 tags:
   - mac
   - windows
+  - debugging
+  - reverse_engineering
+  - hex_editor
+  - pwnable
 ---
 ## 설명
 ---

@@ -1,6 +1,9 @@
 ---
 tags:
   - windows
+  - forensic
+  - artifact_analysis
+  - registry_analysis
 ---
 ## 설명
 ---

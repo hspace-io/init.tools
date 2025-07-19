@@ -1,6 +1,9 @@
 ---
 tags:
   - windows
+  - forensic
+  - artifact_analysis
+  - filesystem
 ---
 ## 설명
 ---

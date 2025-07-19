@@ -1,6 +1,9 @@
 ---
 tags:
   - windows
+  - hex_editor
+  - debugging
+  - application
 ---
 ## 설명
 ---

@@ -1,6 +1,9 @@
 ---
 tags:
   - web_base_tool
+  - cyber_intel
+  - iot_scanner
+  - web_security
 ---
 ## 설명
 ---

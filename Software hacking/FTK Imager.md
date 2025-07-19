@@ -1,6 +1,8 @@
 ---
 tags:
   - windows
+  - forensic
+  - disk_imaging
 ---
 ## 설명
 ---

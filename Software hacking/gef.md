@@ -1,6 +1,10 @@
 ---
 tags:
   - linux
+  - debugging
+  - pwnable
+  - cli_tool
+  - multi_platform
 ---
 ## 설명
 ---

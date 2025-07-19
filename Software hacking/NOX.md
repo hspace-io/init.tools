@@ -1,6 +1,9 @@
 ---
 tags:
   - windows
+  - android
+  - emulation
+  - application
 ---
 ## 설명
 ---

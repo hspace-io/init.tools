@@ -3,6 +3,11 @@ tags:
   - windows
   - mac
   - linux
+  - math
+  - science_tool
+  - library
+  - multi_platform
+  - python
 ---
 ## 설명
 ---

@@ -1,6 +1,8 @@
 ---
 tags:
   - web_base_tool
+  - crypto
+  - data_processing
 ---
 ## 설명
 ---

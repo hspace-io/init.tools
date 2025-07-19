@@ -3,6 +3,9 @@ tags:
   - windows
   - mac
   - linux
+  - forensic
+  - memory_analysis
+  - multi_platform
 ---
 ## 설명
 ---
