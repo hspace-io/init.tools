@@ -46,9 +46,69 @@ pip install numpy
 
 ## 간단 가이드
 ---
+1.  **NumPy 임포트**: Python 스크립트나 인터프리터에서 NumPy를 사용하려면 먼저 임포트해야 합니다.
+    ```python
+    import numpy as np
+    ```
 
+2.  **배열 생성**: `np.array()` 함수를 사용하여 NumPy 배열(ndarray)을 생성합니다.
+    ```python
+    # 1차원 배열
+    arr1 = np.array([1, 2, 3, 4, 5])
+    print(arr1)
 
-## 관련 URL
----
-[NumPy](https://numpy.org/)
-[NumPy PyPi](https://pypi.org/project/numpy/)
+    # 2차원 배열 (행렬)
+    arr2 = np.array([[1, 2, 3], [4, 5, 6]])
+    print(arr2)
+
+    # 0으로 채워진 배열
+    zeros = np.zeros((2, 3))
+    print(zeros)
+
+    # 1로 채워진 배열
+    ones = np.ones((3, 2))
+    print(ones)
+
+    # 특정 범위의 숫자 배열
+    arange = np.arange(0, 10, 2) # 0부터 10 미만까지 2씩 증가
+    print(arange)
+    ```
+
+3.  **배열 연산**: NumPy 배열은 일반 Python 리스트와 달리 벡터화된 연산을 지원하여 빠르고 효율적입니다.
+    ```python
+    arr_a = np.array([1, 2, 3])
+    arr_b = np.array([4, 5, 6])
+
+    # 요소별 덧셈
+    print(arr_a + arr_b)
+
+    # 요소별 곱셈
+    print(arr_a * 2)
+
+    # 행렬 곱셈 (dot product)
+    matrix_a = np.array([[1, 2], [3, 4]])
+    matrix_b = np.array([[5, 6], [7, 8]])
+    print(np.dot(matrix_a, matrix_b))
+    ```
+
+4.  **배열 인덱싱 및 슬라이싱**: Python 리스트와 유사하게 인덱싱과 슬라이싱을 사용할 수 있습니다.
+    ```python
+    arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+    # 특정 요소 접근
+    print(arr[0, 0]) # 1
+
+    # 행 슬라이싱
+    print(arr[0:2, :]) # 첫 두 행
+
+    # 열 슬라이싱
+    print(arr[:, 1]) # 두 번째 열
+    ```
+
+5.  **통계 함수**: 평균, 합계, 표준편차 등 다양한 통계 함수를 제공합니다.
+    ```python
+    data = np.array([10, 20, 30, 40, 50])
+    print(np.mean(data)) # 평균
+    print(np.sum(data))  # 합계
+    print(np.std(data))  # 표준편차
+    ```

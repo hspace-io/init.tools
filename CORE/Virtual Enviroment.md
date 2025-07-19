@@ -81,6 +81,22 @@ tags:
 
 ### Parallels Desktop ()
 ---
+`Parallels Desktop`은 macOS 사용자를 위해 특별히 설계된 가상화 소프트웨어로, Mac에서 Windows, Linux 등 다른 운영체제를 재부팅 없이 동시에 실행할 수 있게 해줍니다. 특히 Apple Silicon(M1, M2 등) Mac과 Intel Mac 모두에서 최적화된 성능을 제공하며, 사용 편의성과 강력한 기능으로 널리 알려져 있습니다.
+
+#### 주요 특징
+- **macOS와의 완벽한 통합**: Coherence 모드를 사용하면 Windows 애플리케이션을 Mac 데스크톱에서 마치 네이티브 앱처럼 실행할 수 있습니다.
+- **고성능**: Apple Silicon Mac에서 ARM 기반 Windows 11을 거의 네이티브 속도로 실행할 수 있으며, DirectX 및 OpenGL 그래픽 가속을 지원하여 게임이나 그래픽 집약적인 애플리케이션도 원활하게 구동합니다.
+- **간편한 설정**: 몇 번의 클릭만으로 Windows를 자동으로 다운로드하고 설치할 수 있습니다.
+- **다양한 운영체제 지원**: Windows, Ubuntu, Fedora, Android 등 다양한 운영체제를 지원합니다.
+
+#### 설치 방법
+1. [Parallels 공식 웹사이트](https://www.parallels.com/kr/products/desktop/)에서 Parallels Desktop 평가판 또는 정식 버전을 다운로드합니다.
+2. 다운로드한 `.dmg` 파일을 열고 설치 아이콘을 두 번 클릭하여 설치를 진행합니다.
+3. 설치 마법사의 지시에 따라 Windows 또는 다른 운영체제를 설치합니다.
+
+#### 사용 시 주의 사항
+- Parallels Desktop은 유료 소프트웨어이며, 연간 구독 또는 영구 라이선스로 구매할 수 있습니다.
+- Apple Silicon Mac에서는 ARM 버전의 운영체제만 가상화할 수 있습니다(예: Windows 11 on ARM).
 
 ### UTM ()
 ---

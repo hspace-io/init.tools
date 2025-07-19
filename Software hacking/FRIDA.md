@@ -15,7 +15,7 @@ Windows, macOS, Linux, IOS, Android, and QNX 기반의 네이트브 앱에 대�
 
 ## 설치 영역
 ---
-
+Frida는 Python 패키지로 설치되므로, 특정 경로에 설치되기보다는 Python의 `site-packages` 디렉토리에 설치됩니다. `frida-tools`의 실행 파일은 Python의 `Scripts` 또는 `bin` 디렉토리에 위치하게 됩니다.
 
 ## 주요 기능
 ---
@@ -49,7 +49,37 @@ pip install frida-tools # cli 도구 모음
 
 ## 간단 가이드
 ---
+1.  **실행 중인 프로세스 확인**: `frida-ps -Ua` 명령어로 USB로 연결된 모바일 기기에서 실행 중인 앱 목록을 확인합니다.
+    ```sh
+    frida-ps -Ua
+    ```
 
+2.  **특정 함수 트레이싱**: `frida-trace`를 사용하여 특정 앱의 함수 호출을 추적합니다. 예를 들어, `open` 함수를 트레이싱하고 싶을 때 사용합니다.
+    ```sh
+    # -U: USB 기기, -f: 앱 패키지 이름, -i: 포함할 함수
+    frida-trace -U -f com.example.app -i "open"
+    ```
+
+3.  **JavaScript 스크립트로 후킹**: JavaScript 파일을 작성하여 특정 함수의 동작을 변경하거나 정보를 빼낼 수 있습니다.
+    *   `hook.js` 파일 예시 (Java의 `MainActivity.secret` 함수의 리턴 값을 "Hello Frida!"로 변경)
+        ```javascript
+        Java.perform(function () {
+            const MainActivity = Java.use('com.example.app.MainActivity');
+            MainActivity.secret.implementation = function () {
+                console.log('secret() is called');
+                return 'Hello Frida!';
+            };
+        });
+        ```
+    *   스크립트 실행
+        ```sh
+        frida -U -f com.example.app -l hook.js
+        ```
+
+4.  **대화형 세션**: `-l` 옵션 없이 실행하면 Frida의 대화형 쉘에 진입하여 실시간으로 코드를 실행하고 분석할 수 있습니다.
+    ```sh
+    frida -U -f com.example.app
+    ```
 
 ## 관련 URL
 ---

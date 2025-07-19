@@ -32,30 +32,126 @@ tags:
 
 ## 설치 방법
 ---
-### Linux
-1. 아래의 명령어를 터미널에 입력하여 설치가 가능합니다.
-```sh
-sudo add-apt-repository ppa:ethereum/ethereum
-sudo apt-get update
-sudo apt-get install solc
-```
+`Foundry`는 `foundryup` 스크립트를 통해 설치하는 것이 가장 일반적입니다.
 
-### mac
-1. 아래의 명령어를 터미널에 입력하여 설치가 가능합니다.
-```sh
-brew update
-brew upgrade
-brew tap ethereum/ethereum
-brew install solidity
-```
+### Linux / macOS
+1.  터미널에서 다음 명령어를 실행하여 `foundryup`을 설치합니다.
+    ```sh
+    curl -L https://foundry.paradigm.xyz | bash
+    ```
+2.  설치 후 터미널을 다시 시작하거나, 다음 명령어를 실행하여 PATH 환경 변수를 업데이트합니다.
+    ```sh
+    source ~/.bashrc # 또는 ~/.zshrc
+    ```
+
+### Windows
+1.  Windows에서는 `Git Bash` 또는 `WSL (Windows Subsystem for Linux)` 환경에서 설치하는 것을 권장합니다.
+2.  `Git Bash` 또는 `WSL` 터미널을 열고, Linux/macOS와 동일하게 `curl -L https://foundry.paradigm.xyz | bash` 명령어를 실행합니다.
 
 ### 설치 시 주의 사항
-- Windows를 사용하는 경우 Foundryup은 현재 Powershell이나 명령 프롬프트(CMD)를 지원하지 않으므로 GIT BASH 또는 WSL을 설치하여 사용해야 합니다.
-- 
+- `foundryup`은 Foundry의 모든 도구(forge, cast, anvil, chisel)를 함께 설치합니다.
+- 설치 후 `forge --version` 명령어를 통해 설치를 확인할 수 있습니다.
 
 ## 간단 가이드
 ---
+1.  **새 프로젝트 생성**: `forge init` 명령어로 새로운 Foundry 프로젝트를 초기화합니다.
+    ```sh
+    forge init my-foundry-project
+    cd my-foundry-project
+    ```
 
+2.  **스마트 컨트랙트 작성**: `src` 디렉토리에 Solidity 파일을 작성합니다. (예: `src/Counter.sol`)
+    ```solidity
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.18;
+
+    contract Counter {
+        uint public number;
+
+        function setNumber(uint newNumber) public {
+            number = newNumber;
+        }
+
+        function increment() public {
+            number++;
+        }
+    }
+    ```
+
+3.  **컴파일**: `forge build` 명령어로 컨트랙트를 컴파일합니다.
+    ```sh
+    forge build
+    ```
+
+4.  **테스트 작성 및 실행**: `test` 디렉토리에 테스트 파일을 작성합니다. (예: `test/Counter.t.sol`)
+    ```solidity
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.18;
+
+    import "forge-std/Test.sol";
+    import "../src/Counter.sol";
+
+    contract CounterTest is Test {
+        Counter public counter;
+
+        function setUp() public {
+            counter = new Counter();
+        }
+
+        function testIncrement() public {
+            counter.increment();
+            assertEq(counter.number(), 1);
+        }
+
+        function testSetNumber() public {
+            counter.setNumber(100);
+            assertEq(counter.number(), 100);
+        }
+    }
+    ```
+    `forge test` 명령어로 테스트를 실행합니다.
+    ```sh
+    forge test
+    ```
+
+5.  **로컬 개발 블록체인 실행 (Anvil)**: `anvil` 명령어로 로컬 이더리움 블록체인을 실행합니다.
+    ```sh
+    anvil
+    ```
+
+6.  **컨트랙트 배포 (forge script)**: `script` 디렉토리에 배포 스크립트를 작성하고 `forge script`로 배포합니다.
+    ```sh
+    # 예시: script/DeployCounter.s.sol
+    // SPDX-License-Identifier: MIT
+    pragma solidity ^0.8.18;
+
+    import "forge-std/Script.sol";
+    import "../src/Counter.sol";
+
+    contract DeployCounter is Script {
+        function run() public returns (Counter) {
+            vm.startBroadcast();
+            Counter counter = new Counter();
+            vm.stopBroadcast();
+            return counter;
+        }
+    }
+    ```
+    ```sh
+    forge script script/DeployCounter.s.sol --rpc-url http://127.0.0.1:8545 --private-key YOUR_PRIVATE_KEY --broadcast
+    ```
+
+7.  **블록체인 상호작용 (cast)**: `cast` 명령어로 블록체인과 상호작용합니다.
+    ```sh
+    # 현재 블록 번호 확인
+    cast block-number
+
+    # 특정 주소의 잔액 확인
+    cast balance <ADDRESS>
+
+    # 컨트랙트 함수 호출 (읽기 전용)
+    cast call <CONTRACT_ADDRESS> "number()(uint256)"
+    ```
 
 ## 관련 URL
 ---

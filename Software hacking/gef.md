@@ -12,7 +12,7 @@ GEF(GDB Enhanced Features)는 GDB를 위한 확장 플러그인입니다. Python
 
 ## 설치 영역
 ---
-
+GEF는 GDB의 플러그인이므로 별도의 설치 경로가 없습니다. 일반적으로 `~/.gdbinit` 파일에 GEF 스크립트를 소스(source)하도록 설정하여 GDB 실행 시 자동으로 로드됩니다.
 
 ## 주요 기능
 ---
@@ -47,7 +47,36 @@ echo "source /path/to/gef.py" >> ~/.gdbinit
 
 ## 간단 가이드
 ---
+1.  **GDB와 함께 GEF 실행**: GEF가 설치된 후, GDB를 실행하면 자동으로 GEF가 로드됩니다.
+    ```sh
+    gdb <실행 파일 경로>
+    ```
+    *   예시: `gdb ./a.out`
 
+2.  **Context 정보 확인**: GDB가 실행되면 GEF는 자동으로 현재 레지스터, 스택, 코드, 메모리 등의 컨텍스트 정보를 보기 좋게 표시합니다.
+
+3.  **Checksec**: 바이너리의 보안 속성을 확인합니다.
+    ```sh
+    checksec
+    ```
+
+4.  **Heap 정보**: 힙 관련 정보를 확인합니다. (힙 익스플로잇 시 유용)
+    ```sh
+    heap
+    ```
+
+5.  **Telescope**: 스택 또는 메모리 주소의 내용을 자세히 확인합니다.
+    ```sh
+    telescope $rsp # 스택 포인터가 가리키는 곳의 내용 확인
+    telescope 0x12345678 # 특정 주소의 내용 확인
+    ```
+
+6.  **ROP 가젯 검색**: 바이너리 내에서 ROP 가젯을 검색합니다.
+    ```sh
+    ropper
+    ```
+
+7.  **GDB 기본 명령어 사용**: GEF는 GDB의 기능을 확장하는 것이므로, `b` (breakpoint), `r` (run), `n` (next), `s` (step), `c` (continue) 등 기존 GDB 명령어는 그대로 사용할 수 있습니다.
 
 ## 관련 URL
 ---

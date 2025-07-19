@@ -14,7 +14,14 @@ tags:
 
 ## 설치 영역
 ---
+### Windows
+`C:\Program Files\OWASP\Zed Attack Proxy` (기본 설치 경로)
 
+### mac
+`/Applications/OWASP ZAP.app`
+
+### Linux
+`~/ZAP_{version}` (압축 해제 경로)
 
 ## 주요 기능
 ---
@@ -53,6 +60,22 @@ brew install --cask zap
 
 ## 간단 가이드
 ---
+1.  **프록시 설정**: ZAP을 실행하고 브라우저의 프록시 설정을 ZAP의 기본 프록시 주소(기본값: `127.0.0.1:8080`)로 변경합니다. HTTPS 트래픽을 분석하려면 ZAP의 CA 인증서를 브라우저에 설치해야 합니다.
+
+2.  **수동 탐색 (Manual Explore)**: 브라우저를 통해 웹 애플리케이션을 탐색하면서 ZAP이 트래픽을 캡처하고 사이트 구조를 자동으로 빌드하도록 합니다. `Sites` 탭에서 탐색된 사이트 구조를 확인할 수 있습니다.
+
+3.  **자동 스캔 (Automated Scan)**:
+    *   `Quick Start` 탭에서 `Automated Scan`을 선택합니다.
+    *   `URL to attack` 입력란에 스캔할 웹 애플리케이션의 URL을 입력하고 `Attack` 버튼을 클릭합니다.
+    *   ZAP이 자동으로 크롤링 및 액티브 스캔을 수행하여 취약점을 탐지합니다.
+
+4.  **액티브 스캔 (Active Scan)**: 특정 URL이나 파라미터에 대해 능동적인 공격을 수행하여 취약점을 탐지합니다.
+    *   `Sites` 탭에서 스캔할 URL을 선택하고 마우스 오른쪽 버튼을 클릭한 후 `Attack > Active Scan`을 선택합니다.
+
+5.  **경보 확인 (Alerts)**: `Alerts` 탭에서 탐지된 취약점 목록과 상세 정보를 확인할 수 있습니다. 위험도(High, Medium, Low, Informational)별로 분류됩니다.
+
+6.  **보고서 생성**: `Report > Generate Report`를 선택하여 HTML, XML, PDF 등 다양한 형식으로 스캔 보고서를 생성할 수 있습니다.
+
 ### 실행 시 주의 사항
 - Linux에서 CLI로 ZAP을 실행할 때 관리자 권한이 필요합니다.
 

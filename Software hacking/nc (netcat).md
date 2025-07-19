@@ -15,7 +15,14 @@ tags:
 
 ## 설치 영역
 ---
+### Windows
+`C:\Program Files (x86)\Nmap\ncat.exe` (Nmap 설치 시)
 
+### mac
+`/usr/bin/nc` (기본 설치)
+
+### Linux
+`/usr/bin/nc`
 
 ## 주요 기능
 ---
@@ -48,9 +55,44 @@ brew install netcat
 
 ## 간단 가이드
 ---
+1.  **포트 스캔**: 특정 호스트의 열린 포트를 확인합니다.
+    ```sh
+    nc -zv <대상 IP> <시작 포트>-<끝 포트>
+    ```
+    *   예시: `nc -zv 192.168.1.1 1-1024` (1번부터 1024번 포트 스캔)
+
+2.  **TCP 클라이언트**: 특정 포트로 TCP 연결을 시도하고 데이터를 주고받습니다.
+    ```sh
+    nc <대상 IP> <포트>
+    ```
+    *   예시: `nc example.com 80` (example.com의 80번 포트에 연결)
+
+3.  **TCP 서버 (리스너)**: 특정 포트에서 들어오는 TCP 연결을 대기합니다.
+    ```sh
+    nc -lvp <포트>
+    ```
+    *   예시: `nc -lvp 1234` (1234번 포트에서 연결 대기)
+
+4.  **파일 전송 (서버 -> 클라이언트)**:
+    *   **서버 (파일 전송)**:
+        ```sh
+        nc -lvp 1234 < file_to_send.txt
+        ```
+    *   **클라이언트 (파일 수신)**:
+        ```sh
+        nc <서버 IP> 1234 > received_file.txt
+        ```
+
+5.  **간단한 HTTP 요청**: 웹 서버에 간단한 HTTP GET 요청을 보냅니다.
+    ```sh
+    (echo -e "GET / HTTP/1.0\r\n\r\n";) | nc example.com 80
+    ```
+
 #### 사용 시 주의 사항
 - OS에 설치된 nc에 따라 옵션 사용 방법에 약간의 차이가 있을 수 있습니다.
+- `netcat`은 강력한 도구이므로, 허가되지 않은 네트워크에서 사용 시 법적 문제가 발생할 수 있습니다.
 
 ## 관련 URL
 ---
 [nmap 웹사이트](https://nmap.org/)
+[Netcat (Wikipedia)](https://en.wikipedia.org/wiki/Netcat)

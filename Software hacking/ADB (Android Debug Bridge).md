@@ -15,12 +15,15 @@ tags:
 ## 설치 영역
 ---
 ### Windows
-
+Android Studio를 통해 설치한 경우, 일반적으로 다음 경로에 위치합니다.
+`C:\Users\<사용자 이름>\AppData\Local\Android\Sdk\platform-tools`
 
 ### mac
 ### homebrew로 설치한 경우
-`/opt/homebrew/Caskroom/android-platform-tools/36.0.0/platform-tools/adb`
-### 설치 파일로 설치한 경우 경로 필요
+`/opt/homebrew/Caskroom/android-platform-tools/<버전>/platform-tools/adb`
+### 설치 파일로 설치한 경우
+`~/Library/Android/sdk/platform-tools`
+
 ## 주요 기능
 ---
 - `앱 관리`: APK 파일 설치, 제거, 백업 및 복원
@@ -59,6 +62,39 @@ brew install android-platform-tools
 
 ## 간단 가이드
 ---
+1.  **기기 연결 확인**
+    ```sh
+    adb devices
+    ```
+    *   연결된 기기 목록과 상태(device, offline, unauthorized)를 확인합니다.
+2.  **쉘 접속**
+    ```sh
+    adb shell
+    ```
+    *   Android 기기의 쉘 환경에 직접 접근하여 리눅스 명령어를 실행할 수 있습니다.
+3.  **파일 전송**
+    *   PC → 기기
+        ```sh
+        adb push <로컬 경로> <기기 경로>
+        ```
+    *   기기 → PC
+        ```sh
+        adb pull <기기 경로> <로컬 경로>
+        ```
+4.  **앱 설치 및 삭제**
+    *   설치
+        ```sh
+        adb install <apk 파일 경로>
+        ```
+    *   삭제
+        ```sh
+        adb uninstall <패키지 이름>
+        ```
+5.  **로그 확인**
+    ```sh
+    adb logcat
+    ```
+    *   기기에서 발생하는 시스템 및 앱 로그를 실시간으로 출력합니다.
 
 
 ## 관련 URL

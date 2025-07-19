@@ -33,8 +33,62 @@ pip install z3-solver
 
 ## 간단 가이드
 ---
+Z3 Solver는 주로 프로그래밍 언어의 라이브러리 형태로 사용됩니다. 여기서는 Python을 이용한 기본적인 사용법을 설명합니다.
 
+1.  **Z3 모듈 임포트**: Python 스크립트 상단에 Z3 모듈을 임포트합니다.
+    ```python
+    from z3 import *
+    ```
+
+2.  **변수 선언**: 정수, 실수, 불리언 등 필요한 변수를 선언합니다.
+    ```python
+    x = Int('x') # 정수 변수 x
+    y = Real('y') # 실수 변수 y
+    p = Bool('p') # 불리언 변수 p
+    ```
+
+3.  **Solver 객체 생성**: `Solver()`를 호출하여 Solver 객체를 생성합니다.
+    ```python
+    s = Solver()
+    ```
+
+4.  **제약 조건 추가**: `add()` 메서드를 사용하여 제약 조건(수학적/논리적 표현식)을 추가합니다.
+    ```python
+    s.add(x > 10)
+    s.add(x < 20)
+    s.add(x % 2 == 0)
+    s.add(y == x / 2)
+    s.add(Implies(p, x == 12)) # p가 참이면 x는 12
+    ```
+
+5.  **만족 가능성 확인**: `check()` 메서드를 호출하여 제약 조건이 만족 가능한지 확인합니다. 결과는 `sat` (만족 가능), `unsat` (만족 불가능), `unknown` 중 하나입니다.
+    ```python
+    if s.check() == sat:
+        print("Solution found:")
+        print(s.model()) # 만족하는 모델(변수 값) 출력
+    else:
+        print("No solution or unknown.")
+    ```
+
+#### 예시: 간단한 방정식 풀기
+```python
+from z3 import *
+
+x = Int('x')
+y = Int('y')
+
+s = Solver()
+s.add(x + y == 10)
+s.add(x - y == 2)
+
+if s.check() == sat:
+    m = s.model()
+    print(f"x = {m[x]}, y = {m[y]}") # 출력: x = 6, y = 4
+else:
+    print("No solution.")
+```
 
 ## 관련 URL
 ---
 [Z3](https://z3prover.github.io/papers/programmingz3.html)
+[Z3 GitHub](https://github.com/Z3Prover/z3)

@@ -15,7 +15,7 @@ tags:
 ## 설치 영역
 ---
 ### Windows
-
+`C:\Program Files\Android\Android Studio`
 
 ### mac
 `/Applications/Android Studio.app`
@@ -61,6 +61,12 @@ brew install --cask android-studio
 
 ## 간단 가이드
 ---
+1.  **AVD Manager 열기**: Android Studio 우측 상단의 `Tools > AVD Manager`를 선택하거나, 툴바에서 AVD Manager 아이콘을 클릭합니다.
+2.  **가상 기기 생성**: `Create Virtual Device` 버튼을 클릭합니다.
+3.  **하드웨어 선택**: 테스트할 기기 프로필(예: Pixel 6)을 선택하고 `Next`를 클릭합니다.
+4.  **시스템 이미지 선택**: 가상 기기에서 실행할 Android 버전을 선택합니다. 필요한 이미지가 없다면 `Download` 링크를 클릭하여 다운로드합니다.
+5.  **AVD 설정 및 완료**: AVD 이름, 시작 방향 등 고급 설정을 지정하고 `Finish`를 클릭하여 생성을 완료합니다.
+6.  **가상 기기 실행**: AVD Manager 목록에서 생성된 가상 기기 옆의 `Launch` (재생) 아이콘을 클릭하여 에뮬레이터를 시작합니다.
 
 
 ## 관련 URL

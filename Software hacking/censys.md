@@ -26,10 +26,26 @@ tags:
 
 ## 간단 가이드
 ---
+1.  **기본 검색**: Censys 웹사이트에 접속하여 검색창에 원하는 키워드를 입력합니다. IP 주소, 도메인, 서비스 이름 등을 검색할 수 있습니다.
+    *   예시: `8.8.8.8` (특정 IP 주소 검색), `google.com` (도메인 검색), `nginx` (서비스 이름 검색)
+
+2.  **필터 사용**: 검색 결과를 더 정교하게 만들려면 다양한 필터를 사용할 수 있습니다. 필터는 검색창에 `필터명:값` 형태로 입력합니다.
+    *   `services.port:80`: 80번 포트가 열려 있는 장치 검색
+    *   `location.country_code:KR`: 한국에 위치한 장치 검색
+    *   `services.software.vendor:Microsoft`: Microsoft 소프트웨어를 사용하는 장치 검색
+    *   `tags:vulnerable`: 취약점이 있는 장치 검색
+    *   예시: `services.port:443 AND location.country_code:US` (미국에 있는 443번 포트 장치 검색)
+
+3.  **검색 결과 분석**: 검색 결과는 IP 주소, 도메인, 서비스 정보, 지리적 위치, 인증서 정보 등 다양한 형태로 표시됩니다. 각 항목을 클릭하면 더 상세한 정보를 볼 수 있습니다.
+
+4.  **인증서 검색**: `Certificates` 탭으로 이동하여 SSL/TLS 인증서를 검색할 수 있습니다. `parsed.names:*.google.com`과 같이 특정 도메인에 발급된 인증서를 찾을 수 있습니다.
+
 #### 사용 시 주의 사항
 - Censys는 사용량 제한이 있으며, 고급 검색 기능은 유료로 제공됩니다.
+- Censys를 통해 얻은 정보는 윤리적이고 합법적인 목적으로만 사용해야 합니다. 무단 침입이나 악용은 법적 처벌을 받을 수 있습니다.
 
 ## 관련 URL
 ---
 [Censys 공식 웹사이트](https://search.censys.io/)
+[Censys 검색 쿼리 가이드](https://censys.io/docs/search/)
 

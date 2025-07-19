@@ -15,7 +15,14 @@ tags:
 
 ## 설치 영역
 ---
+### Windows
+`C:\Users\<사용자 이름>\AppData\Local\Postman` (기본 설치 경로)
 
+### mac
+`/Applications/Postman.app`
+
+### Linux
+`/opt/Postman` (설치 방식에 따라 다름)
 
 ## 주요 기능
 ---
@@ -49,8 +56,24 @@ brew install --cask postman
 
 ## 간단 가이드
 ---
+1.  **새 요청 생성**: Postman을 실행하고 `+` 버튼을 클릭하여 새 HTTP 요청 탭을 엽니다.
 
+2.  **요청 설정**: 
+    *   **메서드 선택**: GET, POST, PUT, DELETE 등 HTTP 메서드를 선택합니다.
+    *   **URL 입력**: 요청을 보낼 API 엔드포인트 URL을 입력합니다.
+    *   **헤더/바디 설정**: `Headers` 탭에서 필요한 헤더를 추가하고, `Body` 탭에서 요청 본문(JSON, Form Data 등)을 설정합니다.
+
+3.  **요청 전송**: `Send` 버튼을 클릭하여 요청을 보냅니다.
+
+4.  **응답 확인**: 요청이 성공적으로 전송되면 하단에 서버로부터의 응답이 표시됩니다. `Body`, `Headers`, `Test Results` 탭에서 응답 내용을 분석할 수 있습니다.
+
+5.  **컬렉션 저장**: `Save` 버튼을 클릭하여 현재 요청을 컬렉션에 저장합니다. 컬렉션은 요청들을 그룹화하고 관리하는 데 사용됩니다.
+
+6.  **환경 변수 사용**: `Environments` 드롭다운 메뉴에서 환경을 선택하거나 새로 생성하여, API 키나 기본 URL과 같은 변수를 관리할 수 있습니다. 요청 URL이나 헤더 등에서 `{{variable_name}}` 형식으로 변수를 사용할 수 있습니다.
+
+7.  **테스트 스크립트 작성**: `Tests` 탭에서 JavaScript 코드를 작성하여 응답을 검증하고 테스트 결과를 확인할 수 있습니다. (예: `pm.test("Status code is 200", function () { pm.response.to.have.status(200); });`)
 
 ## 관련 URL
 ---
 [Postman 공식 웹사이트](https://www.postman.com/)
+[Postman Learning Center](https://learning.postman.com/)
